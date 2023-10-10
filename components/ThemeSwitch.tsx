@@ -2,9 +2,10 @@
 
 import React, { useEffect, useState } from 'react';
 import { themeChange } from 'theme-change';
+import { getLocalStorage } from '@/utils/localStorage';
 
 export default function ThemeSwitch() {
-  const [theme, setTheme] = useState(localStorage.getItem('theme'));
+  const [theme, setTheme] = useState(getLocalStorage('theme'));
 
   const toggleTheme = (e: any) => {
     if (e.target.checked) {
