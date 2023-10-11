@@ -1,17 +1,20 @@
 import React from 'react';
-import ThemeSwitch from '@/components/ThemeSwitch';
+import Navbar from '@/components/Navbar';
+import ProductList from '@/components/ProductList';
+import Cart from '@/components/Cart';
 
 export default function Home() {
   return (
-    <>
-      <header></header>
-      <main className='flex flex-col w-full h-screen justify-center items-center'>
-        <div className='flex flex-row gap-4 justify-between items-center'>
-          <h1 className='text-2xl font-semibold'>Bakulan</h1>
-          <ThemeSwitch />
+    <div className='grid grid-cols-12'>
+      <main className='col-span-12 lg:col-span-8 xl:col-span-8'>
+        <Navbar />
+        <div>
+          <ProductList />
         </div>
       </main>
-      <footer></footer>
-    </>
+      <aside className='hidden lg:grid lg:col-span-4 xl:col-span-4 border-l-2 border-gray-100'>
+        <Cart />
+      </aside>
+    </div>
   );
 }
