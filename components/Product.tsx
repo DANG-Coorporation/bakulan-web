@@ -11,7 +11,7 @@ export default function Product() {
         />
       </figure>
       <div className='card-body justify-center items-center'>
-        <h2 className='card-title'>Ayam Crispy</h2>
+        <h2 className='card-title text-lg'>Ayam Crispy</h2>
         <p className='text-orange-600'>Rp 10.000</p>
       </div>
     </div>

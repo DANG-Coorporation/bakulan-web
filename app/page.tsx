@@ -5,18 +5,16 @@ import Cart from '@/components/Cart';
 
 export default function Home() {
   return (
-    <>
-      <header>
+    <div className='grid grid-cols-12'>
+      <main className='col-span-12 lg:col-span-8 xl:col-span-8'>
         <Navbar />
-      </header>
-      <main className='grid grid-cols-12'>
-        <div className='col-span-12 md:col-span-8 xl:col-span-9 p-4'>
+        <div>
           <ProductList />
         </div>
-        <aside className='col-span-12 md:col-span-4 xl:col-span-3 border-l-2 border-gray-100'>
-          <Cart />
-        </aside>
       </main>
-    </>
+      <aside className='hidden lg:grid lg:col-span-4 xl:col-span-4 border-l-2 border-gray-100'>
+        <Cart />
+      </aside>
+    </div>
   );
 }

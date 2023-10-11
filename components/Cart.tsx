@@ -1,11 +1,16 @@
 import React from 'react';
+import CartProduct from './CartProduct';
 
 export default function Cart() {
   return (
     <div className='flex flex-col w-full h-screen justify-between'>
-      <div className='flex flex-row justify-between items-center p-4 border-b-2 border-gray-100'>
-        <h2 className='text-xl font-semibold'>Detail Pesanan</h2>
-        <p className='text-sm text-gray-500'>#28</p>
+      <div className='flex flex-col overflow-auto'>
+        <div className='flex flex-row justify-between items-center px-4 py-4 border-b-2 border-gray-100 h-[64px]'>
+          <h2 className='text-xl font-semibold'>Detail Pesanan</h2>
+          <p className='text-sm text-gray-500'>#28</p>
+        </div>
+        <CartProduct />
+        <CartProduct />
       </div>
       <div className='flex flex-col'>
         <div className='flex flex-col p-4 gap-2 border-y-2 border-gray-100'>
