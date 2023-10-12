@@ -6,7 +6,7 @@ export default function Product() {
       <figure className='aspect-video'>
         <img
           src='https://www.tasteofhome.com/wp-content/uploads/2018/01/Crispy-Fried-Chicken_EXPS_TOHJJ22_6445_DR-_02_03_11b.jpg'
-          alt='Shoes'
+          alt='Ayam Crispy'
           className='h-full w-full object-cover'
         />
       </figure>

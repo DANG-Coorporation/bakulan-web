@@ -7,25 +7,32 @@ import {
   RiUser3Line,
 } from 'react-icons/ri';
 import { FaChevronDown } from 'react-icons/fa6';
+import Link from 'next/link';
 
 export default function Navbar() {
   return (
     <nav className='navbar px-4 justify-between gap-4 border-b-2 border-gray-100'>
       <div className='flex flex-row gap-4 items-center w-full justify-between'>
-        <a
+        <Link
           href='/'
           className='btn btn-ghost normal-case text-xl '
         >
           Bakulan
-        </a>
+        </Link>
         <div className='flex flex-row gap-4 items-center'>
           <div className='hidden sm:flex flex-row gap-4 items-center'>
-            <a className='btn btn-ghost normal-case text-md font-normal rounded text-base justify-center items-center'>
+            <Link
+              href='/'
+              className='btn btn-ghost normal-case text-md font-normal rounded text-base justify-center items-center'
+            >
               <RiHome6Line className='text-2xl' /> Beranda
-            </a>
-            <a className='btn btn-ghost normal-case text-md font-normal rounded text-base justify-center items-center'>
+            </Link>
+            <Link
+              href='/dashboard'
+              className='btn btn-ghost normal-case text-md font-normal rounded text-base justify-center items-center'
+            >
               <RiDashboardLine className='text-2xl' /> Dasbor
-            </a>
+            </Link>
           </div>
           <div className='flex lg:hidden'>
             <button className='btn btn-square btn-ghost normal-case text-md font-medium rounded'>
@@ -50,36 +57,39 @@ export default function Navbar() {
             </div>
             <ul
               tabIndex={0}
-              className='dropdown-content z-[1] menu p-2 shadow bg-base-100 rounded w-[13.5rem]'
+              className='dropdown-content z-[1] menu p-2 shadow bg-base-100 rounded w-[13.5rem] mt-2 gap-2'
             >
               <li className='flex sm:hidden'>
-                <a
+                <Link
                   href='/'
                   className='rounded'
                 >
                   <RiHome6Line className='text-2xl' /> Beranda
-                </a>
+                </Link>
               </li>
               <li className='flex sm:hidden'>
-                <a
-                  href='/'
+                <Link
+                  href='/dashboard'
                   className='rounded'
                 >
                   <RiDashboardLine className='text-2xl' /> Dasbor
-                </a>
+                </Link>
               </li>
               <li>
-                <a
-                  href='/profil'
+                <Link
+                  href='/profile'
                   className='rounded'
                 >
                   <RiUser3Line className='text-2xl' /> Profil
-                </a>
+                </Link>
               </li>
               <li>
-                <a className='rounded'>
+                <Link
+                  href='/login'
+                  className='rounded'
+                >
                   <RiLogoutBoxRLine className='text-2xl' /> Keluar
-                </a>
+                </Link>
               </li>
             </ul>
           </div>
