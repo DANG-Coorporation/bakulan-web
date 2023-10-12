@@ -5,14 +5,12 @@ import Cart from '@/components/Cart';
 
 export default function Home() {
   return (
-    <div className='grid grid-cols-12'>
-      <main className='col-span-12 lg:col-span-8 xl:col-span-8'>
+    <div className='flex'>
+      <main className='flex flex-col'>
         <Navbar />
-        <div>
-          <ProductList />
-        </div>
+        <ProductList />
       </main>
-      <aside className='hidden lg:grid lg:col-span-4 xl:col-span-4 border-l-2 border-gray-100'>
+      <aside className='hidden lg:flex'>
         <Cart />
       </aside>
     </div>
