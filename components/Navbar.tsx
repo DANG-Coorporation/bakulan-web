@@ -3,6 +3,8 @@ import {
   RiHome6Line,
   RiDashboardLine,
   RiShoppingCart2Line,
+  RiLogoutBoxRLine,
+  RiUser3Line,
 } from 'react-icons/ri';
 import { FaChevronDown } from 'react-icons/fa6';
 
@@ -48,13 +50,36 @@ export default function Navbar() {
             </div>
             <ul
               tabIndex={0}
-              className='dropdown-content z-[1] menu p-2 shadow bg-base-100 rounded w-64'
+              className='dropdown-content z-[1] menu p-2 shadow bg-base-100 rounded w-[13.5rem]'
             >
-              <li>
-                <a>Profile</a>
+              <li className='flex sm:hidden'>
+                <a
+                  href='/'
+                  className='rounded'
+                >
+                  <RiHome6Line className='text-2xl' /> Beranda
+                </a>
+              </li>
+              <li className='flex sm:hidden'>
+                <a
+                  href='/'
+                  className='rounded'
+                >
+                  <RiDashboardLine className='text-2xl' /> Dasbor
+                </a>
               </li>
               <li>
-                <a>Logout</a>
+                <a
+                  href='/profil'
+                  className='rounded'
+                >
+                  <RiUser3Line className='text-2xl' /> Profil
+                </a>
+              </li>
+              <li>
+                <a className='rounded'>
+                  <RiLogoutBoxRLine className='text-2xl' /> Keluar
+                </a>
               </li>
             </ul>
           </div>
