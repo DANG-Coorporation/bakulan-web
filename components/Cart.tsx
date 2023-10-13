@@ -1,7 +1,16 @@
+'use client';
+
 import React from 'react';
 import CartProduct from './CartProduct';
+import { useRouter } from 'next/navigation';
 
 export default function Cart() {
+  const router = useRouter();
+
+  const handleCheckout = () => {
+    router.push('/payments');
+  };
+
   return (
     <div className='flex flex-col w-[360px] h-screen justify-between'>
       <div className='flex flex-col overflow-auto'>
@@ -28,7 +37,10 @@ export default function Cart() {
           <p className='font-semibold'>Rp 27.750</p>
         </div>
         <div className='flex p-4 justify-center items-center'>
-          <button className='btn w-full bg-orange-600 text-white hover:bg-orange-700 normal-case'>
+          <button
+            className='btn w-full bg-orange-600 text-white hover:bg-orange-700 normal-case'
+            onClick={handleCheckout}
+          >
             Bayar Sekarang
           </button>
         </div>
