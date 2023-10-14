@@ -8,8 +8,8 @@ import LibraryItem from './LibraryItem';
 
 export default function Library() {
   const toggleModal = () => {
-    const modal = document?.getElementById('library');
-    modal?.toggleAttribute('open');
+    const modal = document.getElementById('library') as HTMLDialogElement;
+    modal.showModal();
   };
 
   return (

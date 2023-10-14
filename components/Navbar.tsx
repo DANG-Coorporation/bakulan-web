@@ -8,6 +8,7 @@ import {
 } from 'react-icons/ri';
 import { FaChevronDown } from 'react-icons/fa6';
 import Link from 'next/link';
+import ThemeSwitch from './ThemeSwitch';
 
 export default function Navbar() {
   return (
@@ -39,6 +40,7 @@ export default function Navbar() {
               <RiShoppingCart2Line className='text-2xl' />
             </button>
           </div>
+          <ThemeSwitch />
           <div className='dropdown dropdown-bottom dropdown-end flex'>
             <div
               className='btn btn-ghost p-0 rounded hover:bg-white'

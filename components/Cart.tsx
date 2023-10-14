@@ -3,6 +3,7 @@
 import React from 'react';
 import CartProduct from './CartProduct';
 import { useRouter } from 'next/navigation';
+import PaymentMethod from './PaymentMethod';
 
 export default function Cart() {
   const router = useRouter();
@@ -37,12 +38,7 @@ export default function Cart() {
           <p className='font-semibold'>Rp 27.750</p>
         </div>
         <div className='flex p-4 justify-center items-center'>
-          <button
-            className='btn w-full bg-orange-600 text-white hover:bg-orange-700 normal-case'
-            onClick={handleCheckout}
-          >
-            Bayar Sekarang
-          </button>
+          <PaymentMethod />
         </div>
       </div>
     </div>
