@@ -18,7 +18,7 @@ export default function PaymentMethod() {
         className='btn w-full bg-orange-600 text-white hover:bg-orange-700 normal-case'
         onClick={toggleModal}
       >
-        Bayar Sekarang
+        Metode Pembayaran
       </button>
       <dialog
         id='payment-method'

@@ -8,7 +8,7 @@ import {
 } from 'react-icons/ri';
 import { FaChevronDown } from 'react-icons/fa6';
 import Link from 'next/link';
-import ThemeSwitch from './ThemeSwitch';
+import Drawer from './Drawer';
 
 export default function Navbar() {
   return (
@@ -20,7 +20,7 @@ export default function Navbar() {
         >
           Bakulan
         </Link>
-        <div className='flex flex-row gap-4 items-center'>
+        <div className='flex flex-row items-center'>
           <div className='hidden sm:flex flex-row gap-4 items-center'>
             <Link
               href='/'
@@ -35,12 +35,9 @@ export default function Navbar() {
               <RiDashboardLine className='text-2xl' /> Dasbor
             </Link>
           </div>
-          <div className='flex lg:hidden'>
-            <button className='btn btn-square btn-ghost normal-case text-md font-medium rounded'>
-              <RiShoppingCart2Line className='text-2xl' />
-            </button>
+          <div className='flex mx-4 lg:mx-2'>
+            <Drawer />
           </div>
-          <ThemeSwitch />
           <div className='dropdown dropdown-bottom dropdown-end flex'>
             <div
               className='btn btn-ghost p-0 rounded hover:bg-white'

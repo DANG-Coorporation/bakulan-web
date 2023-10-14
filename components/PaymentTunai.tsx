@@ -2,6 +2,7 @@
 
 import React, { useState } from 'react';
 import { RiCloseLine, RiCashLine } from 'react-icons/ri';
+import PaymentConfirm from './PaymentConfirm';
 
 export default function PaymentTunai() {
   const [selectedButton, setSelectedButton] = useState<string>('');
@@ -42,7 +43,10 @@ export default function PaymentTunai() {
       >
         <div className='modal-box'>
           <form method='dialog'>
-            <button className='btn btn-sm btn-square btn-ghost absolute right-2 top-2'>
+            <button
+              className='btn btn-sm btn-square btn-ghost absolute right-2 top-2'
+              onClick={() => setSelectedButton('')}
+            >
               <RiCloseLine className='text-2xl' />
             </button>
           </form>
@@ -95,11 +99,10 @@ export default function PaymentTunai() {
                 type='number'
                 className='input input-bordered w-full rounded'
                 placeholder='Masukkan jumlah uang'
+                onFocus={() => setSelectedButton('')}
               />
             </div>
-            <button className='btn w-full bg-orange-600 text-white hover:bg-orange-700 normal-case rounded'>
-              Bayar Sekarang
-            </button>
+            <PaymentConfirm setSelectedButton={setSelectedButton} />
           </div>
         </div>
       </dialog>
