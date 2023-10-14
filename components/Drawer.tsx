@@ -14,7 +14,7 @@ export default function Drawer() {
       <div className='drawer-content'>
         <label
           htmlFor='drawer'
-          className='drawer-button btn btn-square btn-ghost normal-case text-md font-medium rounded'
+          className='drawer-button btn btn-square btn-ghost normal-case text-md font-medium rounded lg:hidden'
         >
           <RiShoppingCart2Line className='text-2xl' />
         </label>

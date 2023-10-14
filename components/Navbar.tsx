@@ -20,7 +20,7 @@ export default function Navbar() {
         >
           Bakulan
         </Link>
-        <div className='flex flex-row gap-4 items-center'>
+        <div className='flex flex-row items-center'>
           <div className='hidden sm:flex flex-row gap-4 items-center'>
             <Link
               href='/'
@@ -35,7 +35,7 @@ export default function Navbar() {
               <RiDashboardLine className='text-2xl' /> Dasbor
             </Link>
           </div>
-          <div className='flex lg:hidden'>
+          <div className='flex mx-4 lg:mx-2'>
             <Drawer />
           </div>
           <div className='dropdown dropdown-bottom dropdown-end flex'>
