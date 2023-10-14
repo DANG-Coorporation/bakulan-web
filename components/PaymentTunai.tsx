@@ -42,7 +42,10 @@ export default function PaymentTunai() {
       >
         <div className='modal-box'>
           <form method='dialog'>
-            <button className='btn btn-sm btn-square btn-ghost absolute right-2 top-2'>
+            <button
+              className='btn btn-sm btn-square btn-ghost absolute right-2 top-2'
+              onClick={() => setSelectedButton('')}
+            >
               <RiCloseLine className='text-2xl' />
             </button>
           </form>

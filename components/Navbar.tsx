@@ -8,7 +8,7 @@ import {
 } from 'react-icons/ri';
 import { FaChevronDown } from 'react-icons/fa6';
 import Link from 'next/link';
-import ThemeSwitch from './ThemeSwitch';
+import Drawer from './Drawer';
 
 export default function Navbar() {
   return (
@@ -36,11 +36,8 @@ export default function Navbar() {
             </Link>
           </div>
           <div className='flex lg:hidden'>
-            <button className='btn btn-square btn-ghost normal-case text-md font-medium rounded'>
-              <RiShoppingCart2Line className='text-2xl' />
-            </button>
+            <Drawer />
           </div>
-          <ThemeSwitch />
           <div className='dropdown dropdown-bottom dropdown-end flex'>
             <div
               className='btn btn-ghost p-0 rounded hover:bg-white'
