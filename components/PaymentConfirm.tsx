@@ -22,7 +22,7 @@ export default function PaymentConfirm({ setSelectedButton }: any) {
   return (
     <>
       <button
-        className='btn w-full bg-orange-600 text-white hover:bg-orange-700 normal-case rounded'
+        className='btn w-full bg-orange-600 text-white hover:bg-orange-700 normal-case'
         onClick={toggleModal}
       >
         Bayar Sekarang
@@ -41,7 +41,7 @@ export default function PaymentConfirm({ setSelectedButton }: any) {
               <p className='text-center text-sm'>dari total Rp 50.000</p>
             </div>
             <form method='dialog'>
-              <button className='btn w-full bg-orange-600 text-white hover:bg-orange-700 normal-case rounded'>
+              <button className='btn w-full bg-orange-600 text-white hover:bg-orange-700 normal-case'>
                 Kembali ke Beranda
               </button>
             </form>

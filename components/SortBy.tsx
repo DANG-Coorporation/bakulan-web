@@ -2,7 +2,7 @@ import React from 'react';
 
 export default function SortBy() {
   return (
-    <select className='select select-bordered w-44 rounded'>
+    <select className='select select-bordered w-44'>
       <option
         disabled
         selected

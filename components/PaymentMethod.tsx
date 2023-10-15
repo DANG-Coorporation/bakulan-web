@@ -35,10 +35,10 @@ export default function PaymentMethod() {
           </h3>
           <div className='grid grid-cols-2 gap-8'>
             <PaymentTunai />
-            <button className='btn btn-square btn-ghost normal-case aspect-square w-full h-full shadow-md'>
+            <button className='btn btn-square btn-ghost normal-case aspect-square w-full h-full shadow-sm hover:shadow-md bg-base-200'>
               <div className='flex flex-col gap-2 justify-center items-center'>
-                <RiBankCardLine className='text-4xl' />
-                <p className='text-lg font-medium'>Non Tunai</p>
+                <RiBankCardLine className='text-3xl sm:text-4xl' />
+                <p className='text-md sm:text-lg font-medium'>Non Tunai</p>
               </div>
             </button>
           </div>
