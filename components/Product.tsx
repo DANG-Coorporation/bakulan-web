@@ -2,7 +2,7 @@ import React from 'react';
 
 export default function Product() {
   return (
-    <div className='card card-compact shadow-xs aspect-square hover:shadow-sm border-2 border-gray-50 cursor-pointer'>
+    <div className='card card-compact shadow-xs aspect-square shadow-sm hover:shadow-md cursor-pointer bg-base-100'>
       <figure className='aspect-video'>
         <img
           src='https://www.tasteofhome.com/wp-content/uploads/2018/01/Crispy-Fried-Chicken_EXPS_TOHJJ22_6445_DR-_02_03_11b.jpg'

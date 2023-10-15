@@ -23,12 +23,12 @@ export default function ThemeSwitch() {
   }, [theme]);
 
   return (
-    <label className='swap swap-rotate'>
+    <label className='swap swap-rotate ml-4'>
       <input
         type='checkbox'
         data-toggle-theme='light, dark'
         data-act-class='ACTIVECLASS'
-        checked={theme === 'light' ? false : true}
+        checked={theme === 'emerald' ? false : true}
         onChange={toggleTheme}
       />
       <svg

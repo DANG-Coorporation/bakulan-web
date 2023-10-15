@@ -5,10 +5,10 @@ export default function SearchInput() {
   return (
     <div className='join w-full'>
       <input
-        className='input input-bordered join-item w-full rounded'
-        placeholder='What are you searching for?'
+        className='input input-bordered join-item w-full'
+        placeholder='Cari produk...'
       />
-      <button className='btn btn-square join-item rounded'>
+      <button className='btn btn-square join-item'>
         <RiSearchLine />
       </button>
     </div>

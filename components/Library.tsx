@@ -15,7 +15,7 @@ export default function Library() {
   return (
     <>
       <button
-        className='btn'
+        className='btn btn-square'
         onClick={toggleModal}
       >
         <BiFoodMenu className='text-2xl' />
