@@ -10,6 +10,8 @@ import { AppDispatch, RootState } from "@/redux/store";
 import { useRouter } from "next/navigation";
 import toast, { Toaster } from "react-hot-toast";
 import { loginAppApi } from "@/redux/auth/login/loginSlice";
+import { setLocalStorage } from "@/utils/localStorage";
+import { delay } from "@/utils/delay";
 export default function LoginPage() {
   const login = useSelector((state: RootState) => state.loginState);
   const dispatch = useDispatch<AppDispatch>();
@@ -33,7 +35,20 @@ export default function LoginPage() {
         dispatch(loginAppApi(values))
           .unwrap()
           .then((data) => {
-            router.push("/");
+            console.log(data);
+            setLocalStorage("user", JSON.stringify(data?.data?.user));
+            setLocalStorage(
+              "accessToken",
+              JSON.stringify(data?.data?.accessToken)
+            );
+            setLocalStorage(
+              "refreshToken",
+              JSON.stringify(data?.data?.refreshToken)
+            );
+            delay(1000, () => {
+              router.push("/");
+            });
+
             resolve(data);
           })
           .catch((error) => {
