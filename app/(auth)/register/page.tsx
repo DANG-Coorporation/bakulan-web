@@ -14,9 +14,7 @@ export default function RegisterPage() {
   const router = useRouter();
   const dispatch = useDispatch<AppDispatch>();
   const toastId = useRef<any>(null);
-  // useEffect(() => {
-  //   toast.success("Success");
-  // }, []);
+
   const registerSchema = Yup.object().shape({
     username: Yup.string().required("Required"),
     email: Yup.string()
@@ -48,11 +46,10 @@ export default function RegisterPage() {
         dispatch(registerOwnerApi(values))
           .unwrap()
           .then((data) => {
+            router.push("/login");
             resolve(data);
           })
           .catch((error) => {
-            console.log("asdasd" + JSON.stringify(error));
-            errorMessages = error.message;
             reject(error);
           });
       }),
@@ -63,7 +60,6 @@ export default function RegisterPage() {
       }
     );
     // const router = useRouter();
-    router.push("/login");
   };
 
   const formik = useFormik({

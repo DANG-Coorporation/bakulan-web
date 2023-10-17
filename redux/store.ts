@@ -1,8 +1,11 @@
 import { configureStore } from "@reduxjs/toolkit";
 import registerStateReducer from "./auth/register/registerSlicer";
+import loginStateReducer from "./auth/login/loginSlice";
+
 const store = configureStore({
   reducer: {
     registerState: registerStateReducer,
+    loginState: loginStateReducer,
   },
 });
 
