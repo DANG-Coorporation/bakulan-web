@@ -24,3 +24,41 @@ export const loginApi = async (data: ILogin) => {
     throw error;
   }
 };
+
+export const createTokenForgetPasswordApi = async (email: string) => {
+  try {
+    return await bakulanApi.post(
+      "/reset-password/send-reset-password-email",
+      JSON.stringify({ email })
+    );
+  } catch (error) {
+    throw error;
+  }
+};
+
+export const checkTokenResetPasswordApi = async (token: string) => {
+  try {
+    return await bakulanApi.get(`/reset-password/check-token/${token}`);
+  } catch (error) {
+    throw error;
+  }
+};
+
+export interface IResetPassword {
+  data: {
+    password: string;
+    confirmPassword: string;
+  };
+  token: string;
+}
+
+export const sendResetPasswordApi = async (input: IResetPassword) => {
+  try {
+    return await bakulanApi.post(
+      `/reset-password/reset-password/${input.token}`,
+      input.data
+    );
+  } catch (error) {
+    throw error;
+  }
+};

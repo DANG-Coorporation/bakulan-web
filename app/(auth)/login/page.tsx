@@ -57,8 +57,8 @@ export default function LoginPage() {
       }),
       {
         loading: "Loading...",
-        success: "Register success.",
-        error: `Register failed. `,
+        success: "Success, please wait a seconds.",
+        error: `Login Failed, please make sure your username and password is correct.`,
       }
     );
   };
@@ -124,6 +124,22 @@ export default function LoginPage() {
               Login
             </button>
           </form>
+          <p
+            className='text-blue-500 cursor-pointer mt-[20px]'
+            onClick={() => {
+              router.push("/register");
+            }}
+          >
+            Dont have account? register
+          </p>
+          <p
+            className='text-blue-500 cursor-pointer mt-[20px]'
+            onClick={() => {
+              router.push("/forgot-password");
+            }}
+          >
+            Forgot password?
+          </p>
         </div>
       </div>
     </>
