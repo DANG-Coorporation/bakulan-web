@@ -26,7 +26,7 @@ export default function ProfileMain() {
   const profileState = useSelector((state: RootState) => state.profileState);
   console.log("pictureId", profileState.data.data?.pictureId);
   const token = getLocalStorage("accessToken");
-  const user = JSON.parse(getLocalStorage("user")!);
+  const user = JSON.parse(getLocalStorage("user") || "{}");
   const route = useRouter();
   const [initialRender, setInitialRender] = useState(true);
   useEffect(() => {
