@@ -1,10 +1,23 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import Button from "./Button";
 import SearchInput from "./SearchInput";
-import TableMenu from "./Table Menu";
+import TableMenu from "./TableMenu";
+import axios from "axios";
+
+type Product = {
+  id: number;
+  name: string;
+  Category: { name: string };
+  price: number;
+  stock: number;
+};
 
 const ProductAdmin = () => {
   const [isModalOpen, setIsModalOpen] = useState(false);
+  const [categori, setCategori] = useState<Product[]>([]);
+  const [selectCategori, setSelectCategori] = useState("");
+  const [categoryFilter, setCategoryFilter] = useState("");
+  const [nameFilter, setNameFilter] = useState("");
 
   const openModal = () => {
     setIsModalOpen(true);
@@ -14,15 +27,51 @@ const ProductAdmin = () => {
     setIsModalOpen(false);
   };
 
+  useEffect(() => {
+    // Mengambil data dari URL
+    axios
+      .get("http://localhost:8081/api/categories", {
+        headers: {
+          Authorization:
+            "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MSwidXNlcm5hbWUiOiJOYW1hIEthc2lyIiwiZW1haWwiOiJrYXNpckBleGFtcGxlLmNvbSIsImlzQWRtaW4iOnRydWUsImlhdCI6MTY5NzYwMTgxNiwiZXhwIjoxNjk3NjMwNjE2fQ.Lk9zCkSpLEZVpmCNUxMifPV_I7uGhgqF4uDTOwPzZSw",
+        },
+      })
+      .then((response) => {
+        setCategori(response.data.data);
+      })
+      .catch((error) => {
+        console.error("Error fetching data:", error);
+      });
+  }, []);
+
   return (
     <>
       <h1 className="">Menu</h1>
       <div className="flex justify-between mt-10 mb-10">
-        <SearchInput placeholder="Cari Menu..." classname="w-30% mr-2" />
+        <SearchInput
+          placeholder="Cari Menu..."
+          className="w-30% mr-2"
+          value={nameFilter}
+          onChange={(e: React.ChangeEvent<HTMLInputElement>) =>
+            setNameFilter(e.target.value)
+          }
+        />
+        <select
+          value={categoryFilter}
+          onChange={(e) => setCategoryFilter(e.target.value)}
+        >
+          <option value="">Semua</option>
+          {categori.map((categori) => (
+            <option key={categori.id} value={categori.name}>
+              {categori.name}
+            </option>
+          ))}
+        </select>
         <Button item="Menu" onClick={openModal} />
       </div>
 
-      <TableMenu />
+      <TableMenu categoryFilter={categoryFilter} nameFilter={nameFilter} />
+
       {isModalOpen && (
         <div className="fixed inset-0 z-50 flex items-center justify-center overflow-x-hidden overflow-y-auto outline-none focus:outline-none">
           <div className="relative w-auto max-w-4xl mx-auto my-6">
@@ -31,11 +80,10 @@ const ProductAdmin = () => {
               className="border-0 rounded-lg shadow-lg relative flex flex-col w-full bg-white outline-none focus:outline-none"
               style={{
                 position: "absolute",
-                width: "1200px", // Sesuaikan lebar modal
-                height: "800px", // Sesuaikan tinggi modal
-                left: "calc(50% - 600px)", // Sesuaikan posisi horizontal
-                top: "calc(50% - 400px)", // Sesuaikan posisi vertikal
-                // ... tambahkan properti gaya lainnya di sini
+                width: "1200px",
+                height: "800px",
+                left: "calc(50% - 600px)",
+                top: "calc(50% - 400px)",
               }}
             >
               {/* Header */}
@@ -50,12 +98,27 @@ const ProductAdmin = () => {
               </div>
               {/* Body */}
               <div className="relative p-6 flex-auto flex">
-                {/* Bagian Kiri (1/3 dari Modal) */}
                 <div className="w-1/3">
                   <h3 className="mb-2 text-lg font-semibold">Tambah Gambar</h3>
-                  <input type="file" className="input" />
+                  <input
+                    type="file"
+                    className="input"
+                    id="imageInput"
+                    accept="image/*"
+                  />
+                  <div
+                    className="mt-4"
+                    id="imageContainer"
+                    style={{ display: "none" }}
+                  >
+                    <img
+                      src=""
+                      alt="Preview Gambar"
+                      className="w-full h-auto"
+                      id="imagePreview"
+                    />
+                  </div>
                 </div>
-                {/* Bagian Kanan (2/3 dari Modal) dengan lebar maksimal */}
                 <div className="w-2/3 pl-4 max-w-[calc(100% - 1/3)]">
                   <div className="relative p-6 flex-auto">
                     <h3 className="mb-2 text-lg font-semibold">Nama</h3>
@@ -63,10 +126,16 @@ const ProductAdmin = () => {
                   </div>
                   <div className="relative p-6 flex-auto">
                     <h3 className="mb-2 text-lg font-semibold">Kategori</h3>
-                    <select className="select select-bordered w-full">
-                      <option value="kategori1">Kategori 1</option>
-                      <option value="kategori2">Kategori 2</option>
-                      {/* Tambahkan pilihan kategori lainnya sesuai kebutuhan */}
+                    <select
+                      className="select select-bordered w-full"
+                      value={selectCategori}
+                      onChange={(e) => setSelectCategori(e.target.value)}
+                    >
+                      {categori.map((categori) => (
+                        <option key={categori.id} value={categori.name}>
+                          {categori.name}
+                        </option>
+                      ))}
                     </select>
                   </div>
                   <div className="relative p-6 flex-auto">
@@ -85,7 +154,6 @@ const ProductAdmin = () => {
                   </div>
                 </div>
               </div>
-
               {/* Footer */}
               <div className="flex items-center justify-center p-6 border-t border-solid border-blueGray-200 rounded-b">
                 <button
