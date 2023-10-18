@@ -20,7 +20,10 @@ jobs:
     - name: Install dependencies
       run: |
         npm ci
+        npm build
+        
   deploy:
+    needs: build
     name: deploy branch - ${{ github.ref_name }}
     runs-on: ubuntu-latest
 
