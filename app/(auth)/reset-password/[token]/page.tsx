@@ -88,10 +88,9 @@ function ResetPassword() {
 
   return (
     <>
-      {" "}
       <Toaster position='top-center' reverseOrder={false} />
       <div className='flex flex-col justify-center items-center h-screen'>
-        <div className='flex flex-col justify-center items-center h-screen border-2 h-fit p-5 border-gray-300 rounded-lg shadow-lg w-screen sm:w-[500px]'>
+        <div className='flex flex-col justify-center items-center border-2 h-fit p-5 border-gray-300 rounded-lg shadow-lg w-screen sm:w-[500px]'>
           <h1 className='text-3xl font-bold text-gray-900 pb-5'>
             Reset Password
           </h1>
