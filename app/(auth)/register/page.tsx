@@ -126,6 +126,14 @@ export default function RegisterPage() {
               Register
             </button>
           </form>
+          <p
+            className='text-blue-500 cursor-pointer mt-[20px]'
+            onClick={() => {
+              router.push("/login");
+            }}
+          >
+            Already have an account? Login
+          </p>
         </div>
       </div>
     </>
