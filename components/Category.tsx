@@ -28,7 +28,7 @@ const Categori = () => {
         {
           headers: {
             Authorization:
-              "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MSwidXNlcm5hbWUiOiJOYW1hIEthc2lyIiwiZW1haWwiOiJrYXNpckBleGFtcGxlLmNvbSIsImlzQWRtaW4iOnRydWUsImlhdCI6MTY5NzYwMTgxNiwiZXhwIjoxNjk3NjMwNjE2fQ.Lk9zCkSpLEZVpmCNUxMifPV_I7uGhgqF4uDTOwPzZSw",
+              "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MSwidXNlcm5hbWUiOiJOYW1hIEthc2lyIiwiZW1haWwiOiJrYXNpckBleGFtcGxlLmNvbSIsImlzQWRtaW4iOnRydWUsImlhdCI6MTY5NzY3OTk5MiwiZXhwIjoxNjk3NzA4NzkyfQ.aJZpvz3p3zcIvTjraYkIXhYeOCOF-Hl3J1zW2r8cycg",
           },
         }
       )

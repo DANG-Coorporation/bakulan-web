@@ -31,7 +31,7 @@ const TableMenu: React.FC<TableMenuProps> = ({
         method: "GET",
         headers: {
           Authorization:
-            "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MSwidXNlcm5hbWUiOiJOYW1hIEthc2lyIiwiZW1haWwiOiJrYXNpckBleGFtcGxlLmNvbSIsImlzQWRtaW4iOnRydWUsImlhdCI6MTY5NzYyODc4NywiZXhwIjoxNjk3NjU3NTg3fQ.gea-dMHXWpoHVoqPy0uJ5jmVllr1EMmZVCBkAUma0XA",
+            "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MSwidXNlcm5hbWUiOiJOYW1hIEthc2lyIiwiZW1haWwiOiJrYXNpckBleGFtcGxlLmNvbSIsImlzQWRtaW4iOnRydWUsImlhdCI6MTY5NzY3OTk5MiwiZXhwIjoxNjk3NzA4NzkyfQ.aJZpvz3p3zcIvTjraYkIXhYeOCOF-Hl3J1zW2r8cycg",
         },
       }
     )
@@ -121,7 +121,7 @@ const TableMenu: React.FC<TableMenuProps> = ({
                       Edit
                     </button>
                     <button className="text-red-700 hover:text-red-900 ml-2">
-                      Hapus
+                      Delete
                     </button>
                   </div>
                 </td>
